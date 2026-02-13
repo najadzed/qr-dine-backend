@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'jazzmin',
     'cloudinary',
     'cloudinary_storage',
+    'orders.apps.OrdersConfig',
 ]
 
 ASGI_APPLICATION = "restaurant_backend.asgi.application"
