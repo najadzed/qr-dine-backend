@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'channels', 
-    'orders',
     'rest_framework',
     'corsheaders',
     'jazzmin',

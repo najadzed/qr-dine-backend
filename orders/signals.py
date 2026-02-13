@@ -16,5 +16,5 @@ def create_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(
             user=instance,
             restaurant=restaurant,
-            role="owner"
+            role = "kitchen" if instance.username == "kitchen" else "owner"
         )
