@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.db.models import Max
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=200)
@@ -46,11 +47,12 @@ class MenuItem(models.Model):
     category = models.ForeignKey(MenuCategory, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    image = models.ImageField(upload_to="menu_images/", null=True, blank=True)
+    image = CloudinaryField("image", blank=True, null=True)
     available = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
+
 
 
 # Customer Orders
