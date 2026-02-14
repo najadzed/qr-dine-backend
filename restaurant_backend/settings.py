@@ -71,7 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
 ]
 
 ROOT_URLCONF = 'restaurant_backend.urls'
@@ -90,6 +90,12 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     )
 }
+
+cloudinary.config(
+    cloud_name=os.environ.get("CLOUD_NAME"),
+    api_key=os.environ.get("API_KEY"),
+    api_secret=os.environ.get("API_SECRET"),
+)
 
 CLOUDINARY_STORAGE = {
     "CLOUD_NAME": os.environ.get("CLOUD_NAME"),
